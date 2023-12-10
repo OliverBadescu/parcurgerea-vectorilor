@@ -23,5 +23,11 @@
     <ClInclude Include="probleme.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="solutii.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tema.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
