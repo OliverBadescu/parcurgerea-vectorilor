@@ -419,3 +419,118 @@ int contorPrimeCuUltimulElement(int v[], int dim) {
 	}
 	return ct;
 }
+
+int valoriPare(int v[], int n) {
+
+	int nrPare = 0;
+
+	for (int i = 0; i < n; i++) {
+		if (v[i] % 2 == 0) {
+			nrPare++;
+		}
+	}
+	return nrPare;
+}
+
+int valoriImpare(int v[], int n) {
+
+	int nrImpare = 0;
+
+	for (int i = 0; i < n; i++) {
+		if (v[i] % 2 == 1) {
+			nrImpare++;
+		}
+	}
+	return nrImpare;
+}
+
+int ultimulElementPrim(int v[], int dim) {
+
+	for (int i = dim - 1; i >= 0; i--) {
+
+		if (isNrPrim(v[i]) == true) {
+			return v[i];
+		}
+
+	}
+	return -1;
+}
+
+int inidiciImpariDescresc(int v[], int dim) {
+
+	for (int i = dim - 1; i >= 0; i--) {
+		if (i % 2 == 0) {
+			cout << v[i] << " ";
+		}
+	}
+	return 0;
+}
+
+int indiciPariCresc(int v[], int dim) {
+
+	for (int i = 0; i < dim; i++) {
+		if (i % 2 == 1) {
+			cout << v[i] << " ";
+		}
+	}
+	return 0;
+}
+
+int indiceMax(int v[], int dim) {
+
+	int max = INT_MIN;
+	int imax = INT_MIN;
+
+	for (int i = 0; i < dim; i++) {
+
+		if (v[i] > max) {
+			max = v[i];
+			imax = i;
+		}
+
+	}
+	imax++;
+	return imax;
+}
+
+int indiceMin(int v[], int dim) {
+
+	int min = INT_MAX;
+	int imin = INT_MAX;
+
+	for (int i = 0; i < dim; i++) {
+
+		if (v[i] < min) {
+			min = v[i];
+			imin = i;
+		}
+
+	}
+
+	imin++;
+	return imin;
+}
+
+int difMaxMin(int v[], int dim) {
+
+	int max = cifMax(v, dim);
+	int min = cifMin(v, dim);
+
+	int dif = max - min;
+
+	return dif;
+
+}
+
+int contorEgalCuDiferentaMaxMin(int v[], int dim) {
+
+	int dif = difMaxMin(v, dim);
+	int ct = 0;
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] == dif) {
+			ct++;
+		}
+	}
+	return ct;
+}
