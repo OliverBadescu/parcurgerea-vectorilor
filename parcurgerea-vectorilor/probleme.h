@@ -269,16 +269,17 @@ bool isPrimeIntreEle(int a, int b) {
 
 }
 
-int elementePrimeEgalDepartate(int v[], int dim) {
+int elementePrimeEgalDepartate(int v[], int dim)
+{
 
 	int ct = 0;
 	for (int i = 0,j=dim-1; i < j; i++,j--) {
 		
 		if (isPrimeIntreEle(v[i], v[j])) {
-			ct++;
+			cout << "(" << v[i] << ", " << v[j] << ")" << endl;
 		}
 	}
-	return ct;
+	return 0;
 }
 
 int sumaSir(int v[], int dim) {
@@ -529,6 +530,84 @@ int contorEgalCuDiferentaMaxMin(int v[], int dim) {
 
 	for (int i = 0; i < dim; i++) {
 		if (v[i] == dif) {
+			ct++;
+		}
+	}
+	return ct;
+}
+
+int mediaA(int v[], int dim) {
+
+	int media = 0;
+
+	for (int i = 0; i < dim; i++) {
+		media = media + v[i];
+	}
+	media = media / dim;
+	return media;
+}
+
+int contorElementeMaiMariCaMedie(int v[], int dim) {
+
+	int ct = 0;
+	int medie = mediaA(v, dim);
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] > medie) {
+			ct++;
+		}
+	}
+	return ct;
+}
+
+int pozitieValMax(int v[], int dim) {
+
+	int max = INT_MIN;
+	int imax = INT_MIN;
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] > max) {
+			max = v[i];
+			imax = i;
+		}
+	}
+	return imax;
+}
+
+int pozitieValMin(int v[], int dim) {
+
+	int min = INT_MAX;
+	int imin = INT_MAX;
+
+	for (int i = 0; i < dim; i++) {
+		if (v[i] < min) {
+			min = v[i];
+			imin = i;
+		}
+	}
+	return imin;
+}
+
+int contorElementePrime(int v[], int dim) {
+
+	int ct = 0;
+
+	for (int i = 0; i < dim; i++) {
+		for (int j = i + 1; j < dim; j++) {
+			if (cmmdc(v[i], v[j])) {
+				ct++;
+			}
+		}
+	}
+	return ct++;
+}
+
+int contorElementeCuAceeasiSumaCif(int v[], int dim) {
+
+	int ct = 0;
+
+	for (int i = 0, j = dim - 1; i < j; i++, j--) {
+		if (sumaCif(v[i]) == sumaCif(v[j])) {
 			ct++;
 		}
 	}

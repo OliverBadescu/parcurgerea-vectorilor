@@ -206,3 +206,84 @@ void sol15() {
 	cout << "Sunt " << contor << " elemente egale cu diferenta dintre cea mai mare si cea mai mica valorea din vector care este " << dif << endl;
 
 }
+
+
+// 16) todo: Se citește un vector cu n elemente, numere naturale distincte. 
+// Să se afișeze elementele cuprinse între elementul cu valoarea minimă și cel cu valoare maximă din vector, inclusiv acestea.  ??
+
+void sol16() {
+
+	int v[] = { 7, 9, 6, 2, 8 };
+	int dim = 5;
+	int imax = pozitieValMax(v, dim);
+	int imin = pozitieValMin(v, dim);
+
+	cout << "Valorile sunt: " << imax;
+
+	for (int i = 0; i < dim; i++) {
+
+		if (i >= imax || i <= imax && i >= imin || i <= imin) {
+			cout << v[i] << " ";
+		}
+
+	}
+	cout << imin;
+
+}
+
+
+// 17) todo: Se dă un vector cu n numere naturale. 
+// Să se determine câte dintre elemente au valoarea strict mai mare decât media aritmetică a elementelor vectorului.
+
+
+void sol17() {
+
+	int v[] = { 5, 0, 2, 1, 4 };
+	int dim = 5;
+	int numere = contorElementeMaiMariCaMedie(v, dim);
+
+	cout << "Vectorul are " << numere << " elemente mai mari ca media aritmetica a tuturol elementelor din sir" << endl;
+}
+
+
+// 18) todo: Se dă un vector cu n numere naturale. Să se determine câte dintre perechile de elemente egal depărtate de capetele vectorului sunt prime între ele.
+
+void sol18() {
+
+	int v[] = { 50, 18, 15, 28, 35, 40 };
+	int dim = 6;
+
+
+	cout << "Elementele care sun egal departe de capetele vectorului si sunt prime intre ele sunt: " << endl;
+
+	elementePrimeEgalDepartate(v, dim);
+
+}
+
+
+// 19) todo: Se dă un vector cu n numere naturale. Să se determine câte dintre perechile de elemente din vector sunt prime între ele.
+
+void sol19() {
+
+	int v[] = { 51, 18, 15, 28, 77, 121 };
+	int dim = 6;
+
+	int ct = contorElementePrime(v, dim);
+
+	cout << "Sunt " << ct << " elemente care sunt prime intre ele " << endl;
+
+}
+
+
+// 20) todo: Se dă un vector cu n numere naturale. Să se determine câte dintre perechile de elemente din vector sunt formate din valori cu aceeași sumă a cifrelor.
+
+void sol20() {
+
+	int v[] = { 51, 842, 15, 28, 77, 132 };
+	int dim = 6;
+
+	int ct = contorElementeCuAceeasiSumaCif(v, dim);
+
+	cout << "Sunt " << ct << " perechi de numere care au aceeasi suma a cifrelor" << endl;
+
+}
